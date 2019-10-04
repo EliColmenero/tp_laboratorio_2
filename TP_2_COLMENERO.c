@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "ArrayEmployees.h>"
+#include "ArrayEmployees.h"
 
 
 #define QTY_EMPLOYEES 1000
@@ -17,7 +17,7 @@ int id = 100;
 int flagA = 0;
 char opcion = 'n';
 
-initEmployees(Elist, QTY_EMPLOYEES); //Se indica que la posición se encuentra vacía.
+initEmployees(Elist, QTY_EMPLOYEES); //Se indica que la posiciÃ³n se encuentra vacÃ­a.
 
 
 do{
@@ -64,7 +64,7 @@ do{
         system("pause");
         break;
     case 6:
-        printf("\n ¿Desea salir? s o n\n");
+        printf("\n Â¿Desea salir? s o n\n");
             fflush(stdin);
             opcion = getche();
             system("pause");
