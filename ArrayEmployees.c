@@ -1,11 +1,15 @@
-
 #include "ArrayEmployees.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+#include <ctype.h>
 
 
 
-/** \brief FunciÛn encargada de mostrar y dar a elegir opciones del men˙
+/** \brief Funci√≥n encargada de mostrar y dar a elegir opciones del men√∫
 * principal del programa
-* \return Retorna la opciÛn elegida por el usuario
+* \return Retorna la opci√≥n elegida por el usuario
 *
 */
 int menu(){
@@ -25,7 +29,7 @@ int menu(){
     return opcion;
 }
 
-/** \brief Para indicar que todas las posiciones del array est·n vacÌas
+/** \brief Para indicar que todas las posiciones del array est√°n vac√≠as
 * Se coloca la bandera isEmpty en TRUE en todas las
 * posiciones del array
 * \param eEmployee Elist
@@ -42,11 +46,11 @@ int initEmployees(eEmployee Elist[], int len){
     return 0;
 }
 
-/** \brief Esta funciÛn se encarga de buscar un espacio libre
+/** \brief Esta funci√≥n se encarga de buscar un espacio libre
 * que pueda ser ocupado por el nuevo dato a ingresar.
-* \param Elist corresponde al array donde se trabajar·
+* \param Elist corresponde al array donde se trabajar√°
 * \param len Corresponde a la cantidad de elementos del array
-* \return Retorna un -1 si hubo errores o 0 si se llegÛ a lo esperado.
+* \return Retorna un -1 si hubo errores o 0 si se lleg√≥ a lo esperado.
 *
 */
 int findFreeSpace(eEmployee Elist[], int len){
@@ -56,22 +60,22 @@ int findFreeSpace(eEmployee Elist[], int len){
      for(i = 0; i < len; i++){
         if(Elist[i].isEmpty == 1){
             index = i;
-            break;   //Se corta la b˙squeda una vez que se hallÛ un lugar libre.
+            break;   //Se corta la b√∫squeda una vez que se hall√≥ un lugar libre.
         }
     }
     return index;
 }
 
-/** \brief Toma el espacio libre encontrado con la funciÛn anterior y lo
+/** \brief Toma el espacio libre encontrado con la funci√≥n anterior y lo
 * ocupa pasando los datos recolectados
-* \param Elist Corresponde al array sobre el que se trabajar·
+* \param Elist Corresponde al array sobre el que se trabajar√°
 * \param len Corresponde a la cantidad de empleados
 * \param id Corresponde al id de cada empleado
 * \param name[] Nombres de los empleados
 * \param lastName[] Apellidos de los empleados
 * \param salary Salarios de los empleados
 * \param sector Sector al que pertenecen los empleados
-* \return int Retorna un -1 si hubo erroes y un 0 si pudo finalizar la ejecuciÛn
+* \return int Retorna un -1 si hubo erroes y un 0 si pudo finalizar la ejecuci√≥n
 *
 */
 
@@ -136,13 +140,13 @@ eEmployee newEmployee(
     return Em;
 }
 
-/** \brief Encuentra un empleado recibiendo su ID como par·metro
+/** \brief Encuentra un empleado recibiendo su ID como par√°metro
  *
- * \param Elist Corresponde al array que se recorrer·
- * \param len Corresponde a la cantidad de empleados que se recorrer·n
- * \param id Corresponde al ID de cada empleado que deber· comparar hasta
- * hallar el ID que sea idÈntico al ingresado por teclado
- * \return Retorna la posiciÛn del empleado buscado o un -1 en caso de que no logre
+ * \param Elist Corresponde al array que se recorrer√°
+ * \param len Corresponde a la cantidad de empleados que se recorrer√°n
+ * \param id Corresponde al ID de cada empleado que deber√° comparar hasta
+ * hallar el ID que sea id√©ntico al ingresado por teclado
+ * \return Retorna la posici√≥n del empleado buscado o un -1 en caso de que no logre
  * encontrarlo
  *
  */
@@ -159,9 +163,9 @@ int findEmployeeById(eEmployee Elist[], int id, int len){
     return index;
 }
 
-/** \brief Muestra un empleado recibiendo todos los par·metros de la estructura
+/** \brief Muestra un empleado recibiendo todos los par√°metros de la estructura
  *
- * \param Em Indica dÛnde se deber· buscar el dato seguido del operador punto
+ * \param Em Indica d√≥nde se deber√° buscar el dato seguido del operador punto
  *
  */
 void printEmployee(eEmployee Em){
@@ -169,11 +173,11 @@ void printEmployee(eEmployee Em){
 }
 
 /** \brief Imprime el contenido del array de forma encolumnada
- * Cuenta con una bandera que indica si se pudo encontrar alg˙n
+ * Cuenta con una bandera que indica si se pudo encontrar alg√∫n
  * empleado para ser mostrado o no
  * \param Elist Corresponde al array
  * \param length Corresponde a la cantidad de elementos del array
- * \return Retorna un 0 si se logrÛ encontrar al menos un empleado
+ * \return Retorna un 0 si se logr√≥ encontrar al menos un empleado
  * para mostrar.
  *
  */
@@ -201,7 +205,7 @@ int printEmployees(eEmployee Elist[], int length){
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
  *
- * \param Elist Corresponde al vector que se recorrer·
+ * \param Elist Corresponde al vector que se recorrer√°
  * \param len Corresponde a la cantidad de elementos del array
  * \param id Corresponde al ID de cada empleado
  * \return Retorna un 0 si se pudo remover el empleado exitosamente
@@ -231,7 +235,7 @@ int removeEmployee(eEmployee Elist[], int len){
    {
         printEmployee(Elist[index]);
 
-        printf("øConfirma la baja del empleado? \n");
+        printf("¬øConfirma la baja del empleado? \n");
         fflush(stdin);
         scanf("%c" ,&confirm);
 
@@ -248,14 +252,14 @@ int removeEmployee(eEmployee Elist[], int len){
    return flagOk;
 }
 
-/** \brief FunciÛn para modificar un elemento dentro del array, dentro
- * de un ingreso, se podr· modificar un dato (Ejemplo: el nombre
- * dentro de lo que serÌa un empleado ingresado)
+/** \brief Funci√≥n para modificar un elemento dentro del array, dentro
+ * de un ingreso, se podr√° modificar un dato (Ejemplo: el nombre
+ * dentro de lo que ser√≠a un empleado ingresado)
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
  * \param id Corresponde al ID de cada empleado
- * \return Retorna 0 si se pudo realizar la modificaciÛn exitosamente
+ * \return Retorna 0 si se pudo realizar la modificaci√≥n exitosamente
  * o un -1 si no se pudo hallar el empleado a modificar
  *
  */
@@ -326,11 +330,11 @@ int modifyEmployees(eEmployee Elist[], int len){
     return flagOk;
 }
 
-/** \brief FunciÛn que realiza y muestra los informes realizados sobre los datos
- * correspondientes a los Ìndices del array. Se muestra un SubMen˙ dando a elegir
+/** \brief Funci√≥n que realiza y muestra los informes realizados sobre los datos
+ * correspondientes a los √≠ndices del array. Se muestra un SubMen√∫ dando a elegir
  * las opciones de ordenamiento y operaciones con los salarios de los empleados
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
  */
 void getInformes(eEmployee Elist[], int len){
@@ -376,14 +380,14 @@ void getInformes(eEmployee Elist[], int len){
     }
 }
 
-/** \brief FunciÛn que ordena los empleados por el sector al cual
+/** \brief Funci√≥n que ordena los empleados por el sector al cual
  * pertenecen dentro del array, se ordena de forma
- * descendente o ascendente dependiendo del n˙mero de Ûrden que se le
+ * descendente o ascendente dependiendo del n√∫mero de √≥rden que se le
  * asigne
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
- * \param order Corresponde al tipo de ordenamiento que se le asigne a la funciÛn
+ * \param order Corresponde al tipo de ordenamiento que se le asigne a la funci√≥n
  */
 int sortEmployeesSec(eEmployee Elist[],int len, int order){
     int i;
@@ -417,13 +421,13 @@ int sortEmployeesSec(eEmployee Elist[],int len, int order){
     return 0;
 }
 
-/** \brief FunciÛn que ordena los empleados por su apellido, de forma
- * descendente o ascendente dependiendo del n˙mero de Ûrden que se le
+/** \brief Funci√≥n que ordena los empleados por su apellido, de forma
+ * descendente o ascendente dependiendo del n√∫mero de √≥rden que se le
  * asigne
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
- * \param order Corresponde al tipo de ordenamiento que se le asigne a la funciÛn
+ * \param order Corresponde al tipo de ordenamiento que se le asigne a la funci√≥n
  */
 int sortEmployeesLastName(eEmployee Elist[], int len, int order){
     eEmployee auxEmployee;
@@ -459,11 +463,11 @@ int sortEmployeesLastName(eEmployee Elist[], int len, int order){
     return 0;
 }
 
-/** \brief FunciÛn para calcular el total de empleados del arreglo
+/** \brief Funci√≥n para calcular el total de empleados del arreglo
  * tomando sus sueldos para llegar al total de los mismos y
  * calcular el promedio
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
  */
 void TotEmployees(eEmployee Elist[], int len){
@@ -473,7 +477,7 @@ void TotEmployees(eEmployee Elist[], int len){
     int i = 0;
 
     for(i = 0; i < len ; i++){
-        if(Elist[i].isEmpty == 1){ //Si el espacio est· ocupado, se cuentan los empleados y los salarios de cada uno se acumulan para conocer el total
+        if(Elist[i].isEmpty == 1){ //Si el espacio est√° ocupado, se cuentan los empleados y los salarios de cada uno se acumulan para conocer el total
             TotEmp++;
             TotSalary = TotSalary + Elist[i].salary;
         }
@@ -488,10 +492,10 @@ void TotEmployees(eEmployee Elist[], int len){
 }
 
 
-/** \brief FunciÛn para hallar los empleados cuyo sueldo
+/** \brief Funci√≥n para hallar los empleados cuyo sueldo
  * supere el promedio
  *
- * \param Elist Corresponde al array en el que se aplicar· la funciÛn
+ * \param Elist Corresponde al array en el que se aplicar√° la funci√≥n
  * \param len Corresponde a la cantidad de elementos del array
  */
 void FindHighestSalaries(eEmployee Elist[], int len){
@@ -501,14 +505,14 @@ void FindHighestSalaries(eEmployee Elist[], int len){
     int i = 0;
 
     for(i = 0; i < len ; i++){
-        if(Elist[i].isEmpty == 1){ //Si el espacio est· ocupado, se cuentan los empleados y los salarios de cada uno se acumulan para conocer el total
+        if(Elist[i].isEmpty == 1){ //Si el espacio est√° ocupado, se cuentan los empleados y los salarios de cada uno se acumulan para conocer el total
             TotEmp++;
             TotSalary = TotSalary + Elist[i].salary;
         }
     }
     promedio = (float) TotSalary/TotEmp;
 
-    for(i = 0; i < len ; i++){ //Realizamos otro for que vuelva a recorrer el array en b˙squeda de quienes cobren mayor salario que el promedio calculado
+    for(i = 0; i < len ; i++){ //Realizamos otro for que vuelva a recorrer el array en b√∫squeda de quienes cobren mayor salario que el promedio calculado
             if(Elist[i].salary > promedio){
                 printEmployee(Elist[i]);
                 break;
