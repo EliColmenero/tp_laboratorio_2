@@ -12,7 +12,7 @@ typedef struct
     int isEmpty;
 }eEmployee;
 
-eEmployee newEmployee(int id, char name[], char lastName[], float salary, int sector);
+
 
 #endif // ARRAYEMPLOYEES_H_INCLUDED
 
@@ -32,6 +32,6 @@ void getInformes(eEmployee Elist[], int len);
 void TotalSalary(eEmployee Elist[], int len);
 void FindHighestSalaries(eEmployee Elist[], int len);
 void TotEmployees(eEmployee Elist[], int len);
-
+eEmployee newEmployee(int id, char name[], char lastName[], float salary, int sector);
 
 
